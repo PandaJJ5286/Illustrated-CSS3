@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2.3 层次选择器</title>
+	<!-- 
+		后代选择器 E F
+		子选择器   E>F
+		相邻兄弟选择器 E+F
+		通用兄弟选择器 E~F
+	 -->
+	 <style>
+		*{margin: 0;padding:0;}
+		body{width:300px;margin:0 auto;}
+		div{margin:5px;padding:5px;border:1px solid #ccc;}
+
+		/* 后代选择器 */
+		div div{background-color: orange;}
+		/* 子选择器 */
+		body>div{background-color: green;}
+		/* 相邻兄弟选择器 */
+		.active+div{background-color: lime;}
+		.active~div{background-color: red;}
+	 </style>
+</head>
+<body>
+	<div class="active">1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4
+		<div>5</div>
+		<div>6</div>
+	</div>
+	<div>7
+		<div>8
+			<div>9
+				<div>10</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
